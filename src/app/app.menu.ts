@@ -5,6 +5,14 @@ export const menuItems=[{
     label:'Simple redux store'
 },{
     path:'combine',
-    icon:'save',
+    icon:'build',
     label:'Combine redux store'
+},{
+    path:'middleware',
+    icon:'extension',
+    label:'Use middleware'
+},{
+    path:'ajax',
+    icon:'http',
+    label:'requests'
 }]

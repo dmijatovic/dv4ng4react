@@ -1,0 +1,62 @@
+<section class="page">
+    <md-card class="dv4-redux-card">
+      <md-card-header>
+        <md-card-title>{{title}}</md-card-title>
+        <md-card-subtitle>{{subtitle}}</md-card-subtitle>
+      </md-card-header>
+      
+      <md-card-content>
+        <section class="content-container">
+          <div>
+            <h4>User</h4>
+            <ul class="nav">
+              <li>First Name: {{firstName}}</li>
+              <li>Last Name: {{lastName}}</li>
+              <li>Age: {{age}}</li>
+            </ul>
+          </div>
+          <div class="posts">
+            <h4>Posts</h4>
+            <div class="post-list">
+              <div class="post-item"
+                *ngFor="let item of posts; let i=index">
+                  <div class="post-content">
+                    {{item.title}} - {{item.body}} - {{item.likes}}
+                  </div>
+                  <div class="post-cmd">
+                    <md-icon (click) = "updatePost(i)">
+                      cached
+                    </md-icon>
+                    <md-icon (click) = "deletePost(i)">
+                        delete
+                    </md-icon>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-container">
+          <div class="posts">
+            <button md-raised-button color="primary"
+              (click)="changeUser('FIRSTNAME','Dusan')">First Name 
+            </button>
+            <button md-raised-button
+              (click)="changeUser('LASTNAME','Mijatovic')">Last Name 
+            </button>
+            <button md-raised-button
+              (click)="changeUser('AGE','47')">Age 
+            </button>
+          </div>
+          <div class="posts">
+            <button md-raised-button color="primary"
+              (click)="createPost()">Add post
+            </button>
+          </div>
+        </section>
+        <p [innerHTML]="explanation">
+        </p>
+      </md-card-content>
+
+    </md-card>
+    </section>

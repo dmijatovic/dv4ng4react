@@ -1,6 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 
-import { createStore, combineReducers } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 //import { Observable } from 'rxjs/Observable';
 
@@ -41,7 +42,8 @@ export class HomeStore implements OnDestroy{
     constructor(){
         //debugger
         //crate redux store providing reducer function and intial values
-        this.reduxStore = createStore(this.countReducer, countStore);
+        //, devToolsEnhancer({preloadedState:countStore}) - DOES NOT WORK
+        this.reduxStore = createStore(this.countReducer, countStore );
         //log
         console.log("Redux HomeStore started");
     }
@@ -70,7 +72,7 @@ export class HomeStore implements OnDestroy{
         console.log("Action:", action);
         console.log("Data:", state);
         console.groupEnd();
-
+        //debugger
         //decide on action
         switch(action.type.toUpperCase()){
             case "LIKE":
