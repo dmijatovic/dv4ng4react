@@ -1,9 +1,22 @@
 
-.nav-icon {
-    padding: 0 14px;
-    cursor: pointer;
+
+.counters{
+    min-height:200px;
+    display:flex;
+    align-items: center;
+    
+    .counter-box{
+        display:flex;
+        flex:1;
+        flex-direction:column;
+        align-items: center;
+        font-size:3em;
+    
+        .mat-large-icon{
+            font-size:3em;
+        }
+    }
+    
 }
-  
-.nav-spacer {
-    flex: 1 1 auto;
-}
+
+
