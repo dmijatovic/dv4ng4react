@@ -6,19 +6,22 @@ import {NgModule} from '@angular/core';
 import {
     MatToolbarModule, MdIconModule, MdTabsModule,
     MatMenuModule, MatCardModule, MdButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule, MatListModule,
+    MatDialogModule
 } from '@angular/material';
 
 @NgModule({
     imports: [
         MatToolbarModule, MdIconModule, MdTabsModule,
         MatMenuModule, MatCardModule, MdButtonModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule, MatListModule,
+        MatDialogModule
     ],
     exports: [
         MatToolbarModule, MdIconModule, MdTabsModule,
         MatMenuModule, MatCardModule, MdButtonModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule, MatListModule,
+        MatDialogModule
     ],
 })
 export class AppMateralModule { }

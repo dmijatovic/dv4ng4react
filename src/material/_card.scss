@@ -12,6 +12,7 @@ $app-grey:    mat-color($mat-grey,200);
 
 .dv4-redux-card.mat-card{
     padding:0;
+    //line-height: 1.42;    
     .mat-card-header{
         color:$app-primary;
         background-color:$app-grey;

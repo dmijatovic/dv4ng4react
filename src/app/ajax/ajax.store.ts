@@ -11,8 +11,11 @@ import 'rxjs/add/operator/map';
 
 function fetchData (store) {
     return next => action => {
-        //here you code on intercepted 
-        //store and action data
+        //here we intercept action 
+        /* data request can be 
+        performed from here but I am 
+        experimenting with some other 
+        approaches too, see ajax.svc.ts
         if (action.type=="GET_USERS_START"){
             console.log("MIDDLEWARE cathed request for data");
             //simulate request
@@ -32,7 +35,7 @@ function fetchData (store) {
                     payload:e
                 })
             });
-        }        
+        }*/        
         //call next action
         //if next is not called the process STOPS
         return next(action);

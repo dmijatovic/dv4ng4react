@@ -1,23 +1,53 @@
 import { Injectable, OnDestroy } from '@angular/core';
 
+import { MdDialog, MdDialogRef } from '@angular/material';
+
 import { applyMiddleware, createStore } from 'redux';
 
-//import { devToolsEnhancer } from 'redux-devtools-extension';
+import { devToolsEnhancer } from 'redux-devtools-extension';
+
 
 //-----------------------------------
 // MIDDLEWARE 
 //-----------------------------------
-//this middleware logs
-function logger (store) {
+//this middleware checks
+//if likes < dislikes
+function checker (store) {
     return next => action => {
         //here you code on intercepted 
         //store and action data
-        console.log("MIDDLEWARE action fired", action);
+        console.log("MIDDLEWARE action fired", action);      
+        //let's do some funny check here in the middleware 
+        //to demo use
+        //debugger 
+        if (action.type=="DISLIKE"){
+            let cnt = store.getState();
+            //let see if dislikes are going 
+            //to be greater than likes after 
+            //the action -> we will take
+            if (cnt.likes < cnt.dislikes + action.payload){                
+                let resp = confirm(`
+                Please confirm that you want to INCREASE
+                number of DISLIKES. The number of DISLIKES 
+                will be then greater than number of LIKES.
+                LIKES ${cnt.likes}  <  DISLIKES ${cnt.dislikes + action.payload}.
+                `);
+                if (resp==true){
+                    //JUST PROCEED
+                } else{
+                    //ABORT INCERESE 
+                    //BY CHANGIN tyoe
+                    action.type="ABORT!";
+                }
+                //console.log("Are you SURE?!?")
+            }
+        }  
         //call next action
         //if next is not called the process STOPS
         return next(action);
     }
 }
+
 //this middleware catches the error 
 //from there some additional action 
 //could be taken
@@ -29,7 +59,7 @@ const error = (store) => (next) => (action) =>{
     }
 }
 
-const middlewares = applyMiddleware( logger, error );
+const middlewares = applyMiddleware( checker, error);
 
 
 //import { Observable } from 'rxjs/Observable';

@@ -17,6 +17,7 @@ body{
     font-family: 'Open Sans', sans-serif;
     //font-family: 'Open Sans Condensed', sans-serif;
     font-weight:400; 
+    line-height: 1.39;    
 }
 
 .small-text{
@@ -30,4 +31,7 @@ body{
     padding:21px 0px;
 }
 
+//CUSTOM COMPONENT QUIRKS
+
 @import "material/card";
+@import "material/list";

@@ -12,17 +12,18 @@ export class MiddlewareComponent implements OnInit {
   title="Redux store middleware";
   explanation=`
     In this example we use MIDDLEWARE in our simple 
-    redux store. BUT here we intercept all actions using middleware 
-    and we can perform additional actions. This is usefull 
-    in for checking on errors during the process or 
-    handling side-effects like http requests. 
-    All store code is in middleware.store.ts
+    redux store. We intercept all actions using the middleware 
+    and we perform additional checks/actions before action is 
+    allowed. This is usefull for validation purposes, 
+    checking errors during the process, or to handle side-effects, 
+    like http request. 
     <br/><br>
+    All store code is in "middleware.store.ts".     
     Examine console logs for store communication
-    when events are fired. Store service injects
+    about fired events. Store service injects the 
     reduxStore and is very simple wrapper arount it.
     In fact, redux store functions can be called
-    directly using reduxStore prop in the service.
+    directly using reduxStore in the service.
   `
   likeCnt:number;
   dislikeCnt:number;

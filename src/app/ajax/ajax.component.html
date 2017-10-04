@@ -12,16 +12,23 @@
       <div [class.hidden]="loader" 
         class="ajax-data">
           <p [class.hidden]="users.length > 0">Here comes the data</p>
-          <div *ngFor="let item of users">
-            {{item.id}} - {{item.name}} - {{item.email}}
-          </div>
+          <md-list class="dv4-redux-list">
+            <md-list-item *ngFor="let item of users">
+              <!--{{item.id}}-->
+              <md-icon md-list-icon>person</md-icon>
+              <h3 md-line>{{item.name}}</h3>
+              <p md-line>                  
+                  {{item.email}}
+              </p>
+            </md-list-item>
+          </md-list>          
       </div>
       <div [class.hidden]="!loader" 
         class="ajax-spinner">
           <md-spinner></md-spinner>
       </div>
       <div [class.hidden]="!error"
-        class="http-error">
+        class="ajax-error">
         <h3>
           Error: {{errMsg}}
         </h3>
@@ -30,7 +37,7 @@
 
     <section class="content-container">
       <button md-raised-button color="primary"
-        (click)="fetchData()">Get data 
+        (click)="getUsersStart()">Get data 
       </button>
 
     </section>

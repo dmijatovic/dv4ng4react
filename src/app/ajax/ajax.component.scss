@@ -1,7 +1,9 @@
 
 .ajax-data{
-    height:200px;
+    min-height:200px;
     overflow-y:auto;
+    padding-bottom: 24px;
+      
 }
 
 .ajax-spinner{
@@ -11,6 +13,13 @@
     padding-bottom: 24px;
 }
 
+.ajax-error{
+    height:200px;
+    overflow-y:auto;
+    padding-bottom: 24px;
+}
+
 .hidden{
     display:none;
 }
+

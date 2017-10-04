@@ -1,0 +1,38 @@
+//here we make default md-card layout
+
+//-------------------------------------------
+//THEME COLORS
+//-------------------------------------------
+@import './theming';
+$app-primary: mat-color($mat-blue,800);
+$app-accent:  mat-color($mat-orange,400);
+$app-warn:    mat-color($mat-red,600);
+$app-grey:    mat-color($mat-grey,200);
+
+
+.dv4-redux-list.mat-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height:400px;
+    justify-content: space-between;    
+    
+    .mat-list-item{
+        flex:1;
+        .mat-list-item-content{
+            padding: 4px;
+            height: inherit;
+            font-size: 15px;                        
+        }
+        .mat-list-text{
+            
+            padding:8px;
+
+            p.mat-line{                
+                font-size:13px;
+                padding:8px 0px 8px 0px;                
+            }
+        }
+    }
+    
+}
