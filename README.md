@@ -1,12 +1,12 @@
 # Ng4rx
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
-This is starter project for ng4 with material (custom theme) and ngrx store (redux store pattern implemented using rx)
+This is starter project for ng4 with material (custom theme) and redux store.
 
 ## Branches
 
 - ng4material: starter branch ng4 with custom material theme. use this as stater. note that material is still in beta (beta 11 in this case). There is bug in this version of angular/material so I needed to extract scss file and change few lines of code. This adapted version is in material folder. 
-- ng4rxmd: starter ng4 with custom material and ngrx store. use it as starter for ngrx project 
+- ng4redux: this branch imports redux and tests some of the key principles. I use it to experiment redux integration within angular project.  
 
 ## Development server
 
@@ -32,5 +32,3 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## B
