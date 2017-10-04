@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
 //CUSTOM material module
 //renamed to mod to avoid clash 
@@ -31,7 +32,7 @@ const routes:Routes=[{
   path:'combine',
   component: CombineComponent
 },{
-  path:'mddleware',
+  path:'middleware',
   component: MiddlewareComponent
 },{
   path:'ajax',
@@ -46,7 +47,7 @@ const routes:Routes=[{
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppMateralModule,
+    AppMateralModule,HttpModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

@@ -1,3 +1,43 @@
-<p>
-  ajax works!
-</p>
+<section class="page">
+<md-card class="dv4-redux-card">
+  <md-card-header>
+    <md-card-title>{{title}}</md-card-title>
+    <md-card-subtitle>{{subtitle}}</md-card-subtitle>
+  </md-card-header>
+  
+  <md-card-content>
+    <h3>Users</h3>
+    <section class="content-container">
+      
+      <div [class.hidden]="loader" 
+        class="ajax-data">
+          <p [class.hidden]="users.length > 0">Here comes the data</p>
+          <div *ngFor="let item of users">
+            {{item.id}} - {{item.name}} - {{item.email}}
+          </div>
+      </div>
+      <div [class.hidden]="!loader" 
+        class="ajax-spinner">
+          <md-spinner></md-spinner>
+      </div>
+      <div [class.hidden]="!error"
+        class="http-error">
+        <h3>
+          Error: {{errMsg}}
+        </h3>
+      </div>
+    </section>
+
+    <section class="content-container">
+      <button md-raised-button color="primary"
+        (click)="fetchData()">Get data 
+      </button>
+
+    </section>
+
+    <p [innerHTML]="explanation">
+    </p>
+  </md-card-content>
+
+</md-card>
+</section>

@@ -1,3 +1,41 @@
-<p>
-  middleware works!
-</p>
+<section class="page">
+    <md-card class="dv4-redux-card">
+      <md-card-header>
+        <md-card-title>{{title}}</md-card-title>
+        <md-card-subtitle>{{subtitle}}</md-card-subtitle>
+      </md-card-header>
+      
+      <md-card-content>
+        <section class="counters">
+          <div class="counter-box">
+            {{likeCnt}}
+            <i class="material-icons mat-large-icon">
+              thumb_up
+            </i>
+            <button md-button
+              (click)="countLike()">LIKE
+            </button>
+          </div>
+          <div class="counter-box">
+              {{dislikeCnt}}
+              <i class="material-icons mat-large-icon">
+                thumb_down
+              </i>
+              <button md-button
+                (click)="countDislike()">DISLIKE
+              </button>
+            </div>
+        </section>
+        <p [innerHTML]="explanation">
+        </p>
+      </md-card-content>
+      <!--
+      <md-card-actions>
+        <button md-button
+          (count)="countLike()">LIKE</button>
+        <button md-button
+          (count)="countDislike()">DISLIKE</button>
+      </md-card-actions>
+      -->
+    </md-card>
+    </section>
