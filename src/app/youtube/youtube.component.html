@@ -1,0 +1,105 @@
+<section class="page">
+    <md-card class="dv4-redux-card">
+      <md-card-header>
+        <md-card-title>{{title}}</md-card-title>
+        <md-card-subtitle>{{subtitle}}</md-card-subtitle>
+      </md-card-header>
+      
+      <md-card-content>
+        <!--SEARCH -->
+        <section class="content-container">            
+          <!--SEARCH INPUT -->
+          <md-form-field class="search-full-width">
+            <!--<span mdPrefix>+1 &nbsp;</span>-->
+            <input type="text" 
+              name="search"
+              [(ngModel)]="search"
+              (keydown.enter)="letSearch()"
+              mdInput placeholder="Search">          
+            
+            <md-icon mdSuffix
+              class="icon-btn"
+              (click)="letSearch()">search
+            </md-icon>            
+          </md-form-field>
+          
+        </section>
+        <section>
+          <!--SEARCH DEFIN -->
+          <div class="search-filters">
+            <div class="search-filter-item">
+              <div>
+                  totalResults: {{totalResults}}
+              </div>
+              <div>
+                  regionCode: {{regionCode}}
+              </div>         
+            </div>
+            <div class="search-filter-item">
+              Top {{maxResults}} items 
+              <md-slider min="3" max="12" step="3" 
+                thumbLabel tickInterval="1"
+                name="maxResults"
+                [(ngModel)]="maxResults"                
+                (change)="setMaxResults()">
+              </md-slider>
+            </div>
+
+            <div class="search-filter-item">
+              <md-form-field>
+                <!--date input -->
+                <input mdInput 
+                    [mdDatepicker]="datePicker" 
+                    placeholder="Published after" 
+                    [(ngModel)]="publishedAfter"
+                    (dateChange)="setPublishedAfter()"/>
+                <!-- toggle button -->
+                <md-datepicker-toggle mdSuffix [for]="datePicker"></md-datepicker-toggle>
+                <!-- date picker -->
+                <md-datepicker #datePicker startView="year"></md-datepicker>
+              </md-form-field>
+            </div>
+          </div>          
+        </section>
+        <section class="content-container">
+            
+          <div [class.hidden]="loader" 
+              class="youtube-data">
+              
+            <div class="youtube-video-item"              
+                *ngFor="let item of videos">
+
+                <img class="youtube-thumbnail"
+                  [src]="item.defaultThumbnail?.url"/>
+                  
+                <div>
+                  <h3 class="youtube-title">
+                    <a href="https://www.youtube.com/watch?v={{item.id}}"
+                        target=_new >{{item.title}}</a>
+                  </h3>
+
+                  <p class="youtube-channel">                  
+                    {{item.channelTitle}}, 
+                    {{item.publishedAt | date}}
+                  </p> 
+                  <p class="youtube-stats">                  
+                    viewCount: {{item.viewCount}}
+
+                    likeCount: {{item.likeCount}}
+
+                    commentCount: {{item.commentCount}}
+                  </p>
+                </div>             
+            </div>
+          </div>
+          <div [class.hidden]="!loader" 
+            class="ajax-spinner">
+              <md-spinner></md-spinner>
+          </div>                    
+        </section>
+
+        <p [innerHTML]="explanation"></p>
+      </md-card-content>
+      
+    </md-card>
+    </section>

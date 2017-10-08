@@ -7,7 +7,8 @@ import {
     MatToolbarModule, MdIconModule, MdTabsModule,
     MatMenuModule, MatCardModule, MdButtonModule,
     MatProgressSpinnerModule, MatListModule,
-    MatDialogModule
+    MatDialogModule, MatInputModule, MatSliderModule,
+    MatDatepickerModule, MdNativeDateModule
 } from '@angular/material';
 
 @NgModule({
@@ -15,13 +16,15 @@ import {
         MatToolbarModule, MdIconModule, MdTabsModule,
         MatMenuModule, MatCardModule, MdButtonModule,
         MatProgressSpinnerModule, MatListModule,
-        MatDialogModule
+        MatDialogModule, MatInputModule, MatSliderModule,
+        MatDatepickerModule, MdNativeDateModule
     ],
     exports: [
         MatToolbarModule, MdIconModule, MdTabsModule,
         MatMenuModule, MatCardModule, MdButtonModule,
         MatProgressSpinnerModule, MatListModule,
-        MatDialogModule
+        MatDialogModule, MatInputModule, MatSliderModule,
+        MatDatepickerModule, MdNativeDateModule
     ],
 })
 export class AppMateralModule { }

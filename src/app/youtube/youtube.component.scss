@@ -1,0 +1,29 @@
+
+
+.search-full-width{
+    width: 100%;
+}
+
+.icon-btn{
+    cursor: pointer;
+}
+
+.youtube-data{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.youtube-video-item{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 120px;
+    padding: 16px;
+    text-align: center;
+    
+}
+
+.search-filters{
+    display:flex;
+    justify-content: space-between;
+}

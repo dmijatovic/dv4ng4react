@@ -14,5 +14,9 @@ export const menuItems=[{
 },{
     path:'ajax',
     icon:'http',
-    label:'requests'
+    label:'Requests'
+},{
+    path:'youtube',
+    icon:'youtube_searched_for',
+    label:'Search youtube'
 }]

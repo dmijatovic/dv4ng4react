@@ -73,3 +73,10 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($app-theme);
+
+
+
+//CUSTOM COMPONENT QUIRKS
+@import "card";
+@import "list";
+@import "input";
